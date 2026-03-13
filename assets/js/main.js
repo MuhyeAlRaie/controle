@@ -318,3 +318,24 @@ function openHowItWorksModal() {
     
     modal.show();
 }
+
+// Back to Top Button Logic
+const backToTopBtn = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    // Show button when scrolled down 300px
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show-btn');
+    } else {
+        backToTopBtn.classList.remove('show-btn');
+    }
+});
+
+// Smooth Scroll to Top
+backToTopBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
