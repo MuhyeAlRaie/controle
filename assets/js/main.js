@@ -97,7 +97,7 @@ const translations = {
         nav_gallery: "المعرض",
         nav_contact: "اتصل بنا",
         hero_title: "تحكم و ترشيد",
-        hero_subtitle: "نقدم حلولاً مبتكرة لتبريد الهواء مع التركيز على الراحة والاستدامة.",
+        hero_subtitle: "نقدم حلولاً تكييف مبتكرة للمناطق الخارجية مع التركيز على الراحة والاستدامة.",
         hero_cta: "تصفح المنتجات",
         about_prefix: "عن",
         about_title1: "تحكم",
