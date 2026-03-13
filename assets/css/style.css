@@ -441,34 +441,122 @@
 
 
 
-   /* --- Clients & Gallery --- */
-   .client-logo {
-       filter: grayscale(0%);
-       opacity: 1;
-       transition: all 0.3s;
-       max-height: 150px;
-       object-fit: contain;
-   }
+/* --- Dynamic Clients Carousel --- */
+.client-carousel-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Force row height for alignment */
+}
 
-   .client-logo:hover {
-       filter: grayscale(0%);
-       opacity: 1;
-   }
+.client-logo {
+    max-height: 100px; /* Limits logo size */
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(0%); /* Black and white by default */
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
 
-   .gallery-item {
-       border-radius: 10px;
-       overflow: hidden;
-       cursor: pointer;
-       position: relative;
-   }
+/* Hover Effect: Colorize and scale up slightly */
+.client-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
 
-   .gallery-item img {
-       transition: transform 0.5s;
-   }
+/* --- Custom Carousel Arrows (Centered) --- */
 
-   .gallery-item:hover img {
-       transform: scale(1.1);
-   }
+.carousel-control-prev, 
+.carousel-control-next {
+    /* Dimensions */
+    width: 50px;
+    height: 50px;
+    
+    /* --- VERTICAL CENTERING --- */
+    position: absolute;
+    top: 50%; /* Move down 50% of the carousel container */
+    transform: translateY(-50%); /* Move up 50% of the button height */
+    z-index: 15; /* Ensure it sits above images/overlays */
+
+    /* --- HORIZONTAL SPACING (Pull away from edges) --- */
+    /* Using margin pushes the button inwards from the anchor point */
+    margin: 0 15px; 
+
+    /* Styling */
+    background-color: var(--primary-color) !important; /* Navy Blue Background */
+    border-radius: 50%; /* Circular Shape */
+    opacity: 1; /* Always visible */
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.carousel-control-prev:hover, 
+.carousel-control-next:hover {
+    background-color: var(--secondary-color) !important; /* Accent Color on Hover */
+    transform: translateY(-50%) scale(1.1); /* Scale up while keeping centered */
+}
+
+/* Icon Styling (White Arrows) */
+.carousel-control-prev-icon, 
+.carousel-control-next-icon {
+    background-image: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Left Arrow */
+.carousel-control-prev-icon::after {
+    content: '\f053';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: white;
+    font-size: 20px;
+}
+
+/* Right Arrow */
+.carousel-control-next-icon::after {
+    content: '\f054';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: white;
+    font-size: 20px;
+}
+
+/* --- Dynamic Gallery Carousel (Square Grid) --- */
+
+/* 1. The Container (The Square Box) */
+.gallery-card-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Forces Height = Width (Perfect Square) */
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: #f0f0f0; /* Placeholder color while loading */
+}
+
+/* 2. The Image (Fills the Square) */
+.gallery-carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops image to fill the square without distortion */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+/* 3. Hover Effect */
+.gallery-card-wrapper:hover .gallery-carousel-img {
+    transform: scale(1.05);
+}
+
+.gallery-card-wrapper:hover {
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
 
    /* --- Use Cases --- */
    .use-case-card {

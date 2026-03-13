@@ -339,3 +339,165 @@ backToTopBtn.addEventListener('click', (e) => {
         behavior: 'smooth'
     });
 });
+
+// ==========================================
+// DYNAMIC GALLERY LOGIC
+// ==========================================
+
+// 1. LIST YOUR 21 IMAGES HERE
+const galleryImages = [
+    "assets/images/gallery/G01.jpeg",
+    "assets/images/gallery/G02.jpeg",
+    "assets/images/gallery/G03.jpeg",
+    "assets/images/gallery/G04.jpeg",
+    "assets/images/gallery/G05.jpeg",
+    "assets/images/gallery/G06.jpeg",
+    "assets/images/gallery/G07.jpeg",
+    "assets/images/gallery/G08.jpeg",
+    "assets/images/gallery/G09.jpeg",
+    "assets/images/gallery/G10.jpeg",
+    "assets/images/gallery/G11.jpeg",
+    "assets/images/gallery/G12.jpeg",
+    "assets/images/gallery/G13.jpeg",
+    "assets/images/gallery/G14.jpeg",
+    "assets/images/gallery/G15.jpeg",
+    "assets/images/gallery/G16.jpeg",
+    "assets/images/gallery/G17.jpeg",
+    "assets/images/gallery/G18.jpeg",
+    "assets/images/gallery/G19.jpeg",
+    "assets/images/gallery/G20.jpeg",
+];
+
+const carouselInner = document.getElementById('gallery-carousel-inner');
+const indicatorsContainer = document.getElementById('gallery-indicators');
+const itemsPerSlide = 4;
+
+// 2. GENERATE SLIDES
+for (let i = 0; i < galleryImages.length; i += itemsPerSlide) {
+    
+    // Create Carousel Item (The Slide)
+    const item = document.createElement('div');
+    item.className = `carousel-item ${i === 0 ? 'active' : ''}`;
+    
+    // Create Bootstrap Row
+    const row = document.createElement('div');
+    row.className = 'row g-3 justify-content-center';
+
+    // Create Grid Columns (Images)
+    for (let j = 0; j < itemsPerSlide; j++) {
+        const imgIndex = i + j;
+        
+        // Check if image exists in array
+        if (imgIndex < galleryImages.length) {
+            const col = document.createElement('div');
+            // Responsive Grid: 2 per row (Mobile/Tablet), 4 per row (Desktop)
+            col.className = 'col-6 col-md-6 col-lg-3';
+            
+            // Image HTML: Wrapped in div for aspect ratio
+            col.innerHTML = `
+                <div class="gallery-card-wrapper">
+                    <img src="${galleryImages[imgIndex]}" class="gallery-carousel-img" alt="Gallery ${imgIndex}">
+                </div>
+            `;
+            
+            // Click Event to Open Modal
+            const img = col.querySelector('img');
+            img.addEventListener('click', () => {
+                openImageModal(galleryImages[imgIndex]);
+            });
+            
+            row.appendChild(col);
+        }
+    }
+
+    // Append Row to Item, and Item to Carousel
+    item.appendChild(row);
+    carouselInner.appendChild(item);
+
+    // Create Indicator Dot
+    const indicator = document.createElement('button');
+    indicator.type = "button";
+    indicator.setAttribute('data-bs-target', '#galleryCarousel');
+    indicator.setAttribute('data-bs-slide-to', Math.floor(i / itemsPerSlide));
+    if (i === 0) indicator.className = "active";
+    indicator.setAttribute('aria-label', `Slide ${Math.floor(i / itemsPerSlide) + 1}`);
+    indicatorsContainer.appendChild(indicator);
+}
+
+// 3. MODAL FUNCTION
+function openImageModal(src) {
+    const modalElement = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImageDisplay');
+    
+    if(modalElement && modalImg) {
+        modalImg.src = src; 
+        const myModal = new bootstrap.Modal(modalElement);
+        myModal.show();
+    }
+}
+
+// ==========================================
+// DYNAMIC CLIENTS CAROUSEL LOGIC
+// ==========================================
+
+// 1. LIST YOUR CLIENT LOGOS HERE
+const clientLogos = [
+    "assets/images/clients/alfalamanki-150x150.webp",
+    "assets/images/clients/Cello-150x150.webp",
+    "assets/images/clients/Chestnut-150x150.webp",
+    "assets/images/clients/clementine-1-150x150.png",
+    "assets/images/clients/gunbun-150x150.webp",
+    "assets/images/clients/HabraKSA-150x150.webp",
+    "assets/images/clients/JoeAndThejuice-150x150.webp",
+    "assets/images/clients/lavazza-1-150x150.webp",
+    "assets/images/clients/Othaim-150x150.png",
+    "assets/images/clients/Lunch-room-150x150.png",
+    "assets/images/clients/Namaq-Cafe-150x150.webp",
+    "assets/images/clients/Salt-150x150.webp",
+    "assets/images/clients/Ritz-Carlton-150x150.png",
+    "assets/images/clients/FourSeson-150x150.png",
+    "assets/images/clients/suhail-150x150.png"
+];
+
+const clientsInner = document.getElementById('clients-carousel-inner');
+const clientsPerSlide = 4; // Show 6 logos per slide
+
+// 2. GENERATE SLIDES
+for (let i = 0; i < clientLogos.length; i += clientsPerSlide) {
+    
+    // Create Carousel Item (The Slide)
+    const item = document.createElement('div');
+    item.className = `carousel-item ${i === 0 ? 'active' : ''}`;
+    
+    // Create Bootstrap Row
+    const row = document.createElement('div');
+    row.className = 'row justify-content-center align-items-center';
+
+    // Create Grid Columns (Logos)
+    for (let j = 0; j < clientsPerSlide; j++) {
+        const logoIndex = i + j;
+        
+        // Check if logo exists in array
+        if (logoIndex < clientLogos.length) {
+            const col = document.createElement('div');
+            
+            // Responsive Grid Logic:
+            // col-6     = 2 logos per row (Mobile)
+            // col-md-2  = 6 logos per row (Desktop)
+            col.className = 'col-6 col-md-2 text-center';
+            
+            // Logo HTML: Flexbox centering ensures vertical alignment
+            col.innerHTML = `
+                <div class="client-carousel-item">
+                    <img src="${clientLogos[logoIndex]}" class="client-logo" alt="Client ${logoIndex}">
+                </div>
+            `;
+            
+            row.appendChild(col);
+        }
+    }
+
+    // Append Row to Item, and Item to Carousel
+    item.appendChild(row);
+    clientsInner.appendChild(item);
+}
