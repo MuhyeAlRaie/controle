@@ -1162,8 +1162,8 @@
                     </ul>
                     <ul class="impact-list arText" id="impactListLeft">
                         <li>مروحة محورية</li>
-                        <li>مضخة غاطسة صغيرة</li>
-                        <li>وسائط تبريد ( خلايا تبريد )</li>
+                        <li>مضخة صغيرة</li>
+                        <li>وسائط تبريد</li>
                     </ul>
                 </div>
             </div>
@@ -1248,16 +1248,14 @@
                         <li>1 Small Submersible Pump</li>
                         <li>Cooling Media (Pads)</li>
                         <li>Heat Exchanger</li>
-                        <li>Bleeding Valve</li>
                     </ul>
                     <ul class="impact-list arText" id="impactListRight">
                         <li>مروحة محورية</li>
                         <li>مروحة قابسة ( Plug )</li>
-                        <li>مضخة غاطسة صغيرة</li>
-                        <li>مضخة غاطسة كبيرة</li>
-                        <li>وسائط تبريد ( خلايا تبريد )</li>
+                        <li>مضخة كبيرة</li>
+                        <li>مضخة  صغيرة</li>
+                        <li>وسائط تبريد</li>
                         <li>مبادل حراري</li>
-                        <li>صمام تصريف مياه</li>
                     </ul>
                 </div>
             </div>
@@ -1677,52 +1675,50 @@
         }
 
         // Function to update content based on slider value
-        function updateContent(value) {
-            let contentKey;
+       // Function to update content based on slider value
+function updateContent(value) {
+    let contentKey;
 
-            // Determine which data point to use based on slider value
-            if (value <= 12.5) contentKey = 0;
-            else if (value <= 37.5) contentKey = 25;
-            else if (value <= 62.5) contentKey = 50;
-            else if (value <= 87.5) contentKey = 75;
-            else contentKey = 100;
+    // Determine which data point to use based on slider value
+    if (value <= 12.5) contentKey = 0;
+    else if (value <= 37.5) contentKey = 25;
+    else if (value <= 62.5) contentKey = 50;
+    else if (value <= 87.5) contentKey = 75;
+    else contentKey = 100;
 
-            const data = temperatureData[contentKey];
+    const data = temperatureData[contentKey];
 
-            // Update temperature badges with animation
-            if (tempBadgeLeft.textContent !== data.conventional.temp) {
-                animateTemperatureBadge(tempBadgeLeft);
-            }
-            tempBadgeLeft.textContent = data.conventional.temp;
+    // 1. Update temperature badges with animation
+    if (tempBadgeLeft.textContent !== data.conventional.temp) {
+        animateTemperatureBadge(tempBadgeLeft);
+    }
+    tempBadgeLeft.textContent = data.conventional.temp;
 
-            if (tempBadgeRight.textContent !== data.idec.temp) {
-                animateTemperatureBadge(tempBadgeRight);
-            }
-            tempBadgeRight.textContent = data.idec.temp;
+    if (tempBadgeRight.textContent !== data.idec.temp) {
+        animateTemperatureBadge(tempBadgeRight);
+    }
+    tempBadgeRight.textContent = data.idec.temp;
 
-            // Update impact lists (Handling both EN and AR lists since they share ID logic but are separate elements)
-            const leftLists = document.querySelectorAll('#impactListLeft');
-            const rightLists = document.querySelectorAll('#impactListRight');
+    // 2. REMOVED: We do not update Impact Lists via JS anymore.
+    // The HTML contains both English (enText) and Arabic (arText) lists.
+    // CSS handles showing/hiding the correct one based on the language toggle.
+    // Deleting the lines below prevents the JS from overwriting the HTML translations.
+    /*
+    const leftLists = document.querySelectorAll('#impactListLeft');
+    const rightLists = document.querySelectorAll('#impactListRight');
 
-            leftLists.forEach(list => updateImpactList(list, data.conventional.components));
-            rightLists.forEach(list => updateImpactList(list, data.idec.components));
+    leftLists.forEach(list => updateImpactList(list, data.conventional.components));
+    rightLists.forEach(list => updateImpactList(list, data.idec.components));
+    */
 
-            // Update active temperature and RH items
-            updateActiveItems(data.temp, data.rh);
+    // 3. Update active temperature and RH items
+    updateActiveItems(data.temp, data.rh);
 
-            // Update thermometer fill
-            thermometerFill.style.height = `${value}%`;
-        }
+    // 4. Update thermometer fill
+    thermometerFill.style.height = `${value}%`;
+}
 
-        // Function to update impact list
-        function updateImpactList(listElement, components) {
-            listElement.innerHTML = '';
-            components.forEach(component => {
-                const li = document.createElement('li');
-                li.textContent = component;
-                listElement.appendChild(li);
-            });
-        }
+     
 
         // Function to update active temperature and RH items
         function updateActiveItems(temp, rh) {
