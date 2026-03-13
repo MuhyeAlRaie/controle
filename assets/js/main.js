@@ -374,11 +374,11 @@ const itemsPerSlide = 4;
 
 // 2. GENERATE SLIDES
 for (let i = 0; i < galleryImages.length; i += itemsPerSlide) {
-    
+
     // Create Carousel Item (The Slide)
     const item = document.createElement('div');
     item.className = `carousel-item ${i === 0 ? 'active' : ''}`;
-    
+
     // Create Bootstrap Row
     const row = document.createElement('div');
     row.className = 'row g-3 justify-content-center';
@@ -386,26 +386,26 @@ for (let i = 0; i < galleryImages.length; i += itemsPerSlide) {
     // Create Grid Columns (Images)
     for (let j = 0; j < itemsPerSlide; j++) {
         const imgIndex = i + j;
-        
+
         // Check if image exists in array
         if (imgIndex < galleryImages.length) {
             const col = document.createElement('div');
             // Responsive Grid: 2 per row (Mobile/Tablet), 4 per row (Desktop)
             col.className = 'col-6 col-md-6 col-lg-3';
-            
+
             // Image HTML: Wrapped in div for aspect ratio
             col.innerHTML = `
                 <div class="gallery-card-wrapper">
                     <img src="${galleryImages[imgIndex]}" class="gallery-carousel-img" alt="Gallery ${imgIndex}">
                 </div>
             `;
-            
+
             // Click Event to Open Modal
             const img = col.querySelector('img');
             img.addEventListener('click', () => {
                 openImageModal(galleryImages[imgIndex]);
             });
-            
+
             row.appendChild(col);
         }
     }
@@ -428,9 +428,9 @@ for (let i = 0; i < galleryImages.length; i += itemsPerSlide) {
 function openImageModal(src) {
     const modalElement = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImageDisplay');
-    
-    if(modalElement && modalImg) {
-        modalImg.src = src; 
+
+    if (modalElement && modalImg) {
+        modalImg.src = src;
         const myModal = new bootstrap.Modal(modalElement);
         myModal.show();
     }
@@ -464,11 +464,11 @@ const clientsPerSlide = 4; // Show 6 logos per slide
 
 // 2. GENERATE SLIDES
 for (let i = 0; i < clientLogos.length; i += clientsPerSlide) {
-    
+
     // Create Carousel Item (The Slide)
     const item = document.createElement('div');
     item.className = `carousel-item ${i === 0 ? 'active' : ''}`;
-    
+
     // Create Bootstrap Row
     const row = document.createElement('div');
     row.className = 'row justify-content-center align-items-center';
@@ -476,23 +476,23 @@ for (let i = 0; i < clientLogos.length; i += clientsPerSlide) {
     // Create Grid Columns (Logos)
     for (let j = 0; j < clientsPerSlide; j++) {
         const logoIndex = i + j;
-        
+
         // Check if logo exists in array
         if (logoIndex < clientLogos.length) {
             const col = document.createElement('div');
-            
+
             // Responsive Grid Logic:
             // col-6     = 2 logos per row (Mobile)
             // col-md-2  = 6 logos per row (Desktop)
             col.className = 'col-6 col-md-2 text-center';
-            
+
             // Logo HTML: Flexbox centering ensures vertical alignment
             col.innerHTML = `
                 <div class="client-carousel-item">
                     <img src="${clientLogos[logoIndex]}" class="client-logo" alt="Client ${logoIndex}">
                 </div>
             `;
-            
+
             row.appendChild(col);
         }
     }

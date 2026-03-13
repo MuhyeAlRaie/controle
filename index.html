@@ -1275,55 +1275,60 @@
         </div>
     </section>
 
-<!-- Clients Section -->
-<section id="clients" class="section-padding">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h4 class="text-muted text-uppercase" data-i18n="trusted_by">We are proud of the trust our customers place in us and of our commitment to high-quality service.</h4>
+    <!-- Clients Section -->
+    <section id="clients" class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h4 class="text-muted text-uppercase" data-i18n="trusted_by">We are proud of the trust our customers
+                    place in us and of our commitment to high-quality service.</h4>
+            </div>
+
+            <div id="clientsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <!-- Inner Container: JS will inject slides here -->
+                <div class="carousel-inner" id="clients-carousel-inner"></div>
+
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#clientsCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#clientsCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
+    </section>
 
-        <div id="clientsCarousel" class="carousel slide" data-bs-ride="carousel">
-            <!-- Inner Container: JS will inject slides here -->
-            <div class="carousel-inner" id="clients-carousel-inner"></div>
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="gallery_title">Gallery</h2>
 
-            <!-- Controls -->
-<button class="carousel-control-prev" type="button" data-bs-target="#clientsCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-</button>
-<button class="carousel-control-next" type="button" data-bs-target="#clientsCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-</button>
+            <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+                <!-- Inner Container: JS will inject slides here -->
+                <div class="carousel-inner" id="gallery-carousel-inner"></div>
+
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
+                <!-- Indicators (Dots) -->
+                <div class="carousel-indicators" id="gallery-indicators" style="margin-bottom: -20px;"></div>
+            </div>
         </div>
-    </div>
-</section>
-
-<!-- Gallery Section -->
-<section id="gallery" class="section-padding">
-    <div class="container">
-        <h2 class="text-center mb-5" data-i18n="gallery_title">Gallery</h2>
-        
-        <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-            
-            <!-- Inner Container: JS will inject slides here -->
-            <div class="carousel-inner" id="gallery-carousel-inner"></div>
-
-            <!-- Controls -->
-<button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-</button>
-<button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-</button>
-            
-            <!-- Indicators (Dots) -->
-            <div class="carousel-indicators" id="gallery-indicators" style="margin-bottom: -20px;"></div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Cooling Made for Every Place -->
     <section class="section-padding bg-light">
