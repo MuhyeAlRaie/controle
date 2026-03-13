@@ -179,26 +179,26 @@ const translations = {
 // --- Logic ---
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize AOS
-  AOS.init({
-    once: true,
-    offset: 100,
-    // Disables AOS on screens smaller than 768px (Mobile/Phone)
-    disable: function() {
-        var maxWidth = 768;
-        return window.innerWidth < maxWidth;
-    }
-});
+    AOS.init({
+        once: true,
+        offset: 100,
+        // Disables AOS on screens smaller than 768px (Mobile/Phone)
+        disable: function () {
+            var maxWidth = 768;
+            return window.innerWidth < maxWidth;
+        }
+    });
 
-// Navbar Scroll Effect
-const navbar = document.querySelector('.navbar');
+    // Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
 
     // Language State
     let currentLang = 'en';
@@ -277,45 +277,45 @@ window.addEventListener('scroll', () => {
 });
 
 
- // ==========================================
-        // LOGIC FOR THE NEW VIDEO MODAL (Modal 2)
-        // ==========================================
-        const videoModal2 = document.getElementById('videoModal2');
-        const iframe2 = document.getElementById('youtubeFrame2');
-        // This selector looks for the specific play button in the new section
-        const videoBtn2 = document.querySelector('.play-btn-2');
-        // REPLACE THIS WITH YOUR ACTUAL YOUTUBE VIDEO ID
-        const videoID2 = "FwCEDGL4B2w"; 
+// ==========================================
+// LOGIC FOR THE NEW VIDEO MODAL (Modal 2)
+// ==========================================
+const videoModal2 = document.getElementById('videoModal2');
+const iframe2 = document.getElementById('youtubeFrame2');
+// This selector looks for the specific play button in the new section
+const videoBtn2 = document.querySelector('.play-btn-2');
+// REPLACE THIS WITH YOUR ACTUAL YOUTUBE VIDEO ID
+const videoID2 = "FwCEDGL4B2w";
 
-        if (videoModal2 && videoBtn2) {
-            videoModal2.addEventListener('show.bs.modal', () => {
-                iframe2.src = `https://www.youtube.com/embed/${videoID2}?autoplay=1`;
-            });
+if (videoModal2 && videoBtn2) {
+    videoModal2.addEventListener('show.bs.modal', () => {
+        iframe2.src = `https://www.youtube.com/embed/${videoID2}?autoplay=1`;
+    });
 
-            videoModal2.addEventListener('hide.bs.modal', () => {
-                iframe2.src = "";
-            });
-        }
+    videoModal2.addEventListener('hide.bs.modal', () => {
+        iframe2.src = "";
+    });
+}
 // Function to open Image Modal with bilingual support
 function openHowItWorksModal() {
     const modal = new bootstrap.Modal(document.getElementById('imageModal'));
     const modalImg = document.getElementById('modalImageDisplay');
     const container = document.querySelector('.works-image-container');
-    
+
     // Get the image URLs from the data attributes
     const enSrc = container.querySelector('[data-modal-en]').getAttribute('data-modal-en');
     const arSrc = container.querySelector('[data-modal-ar]').getAttribute('data-modal-ar');
-    
+
     // Check current language
     const currentLang = document.documentElement.lang; // 'en' or 'ar'
-    
+
     // Set the modal image source based on language
     if (currentLang === 'ar') {
         modalImg.src = arSrc;
     } else {
         modalImg.src = enSrc;
     }
-    
+
     modal.show();
 }
 

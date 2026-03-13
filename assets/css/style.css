@@ -36,7 +36,7 @@
    }
 
    h2 {
-    font-size: 50px;
+       font-size: 50px;
    }
 
    .text-secondary-custom {
@@ -47,57 +47,62 @@
        padding: 80px 0;
    }
 
-/* --- Navbar Scroll Effect --- */
+   /* --- Navbar Scroll Effect --- */
 
-/* 1. Default State (Top of Page - Transparent Background) */
-.navbar {
-    background-color: transparent !important;
-    padding: 20px 0;
-    transition: all 0.4s ease;
-    box-shadow: none;
-}
+   /* 1. Default State (Top of Page - Transparent Background) */
+   .navbar {
+       background-color: transparent !important;
+       padding: 20px 0;
+       transition: all 0.4s ease;
+       box-shadow: none;
+   }
 
-/* Default Link Color: White */
-.navbar .nav-link {
-    color: #ffffff !important;
-}
+   /* Default Link Color: White */
+   .navbar .nav-link {
+       color: #ffffff !important;
+   }
 
-/* 2. Scrolled State (White Background) */
-.navbar.scrolled {
-    background-color: #ffffff !important;
-    padding: 10px 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
+   /* 2. Scrolled State (White Background) */
+   .navbar.scrolled {
+       background-color: #ffffff !important;
+       padding: 10px 0;
+       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   }
 
-/* Scrolled Link Color: Primary Brand Color */
-.navbar.scrolled .nav-link {
-    color: var(--primary-color) !important;
-}
+   /* Scrolled Link Color: Primary Brand Color */
+   .navbar.scrolled .nav-link {
+       color: var(--primary-color) !important;
+   }
 
-/* 3. Logo/Image Switching Logic */
-/* By default, show the "Top" logo and hide the "Scrolled" logo */
-.logo-scrolled {
-    display: none;
-}
-.logo-default {
-    display: block;
-}
+   /* 3. Logo/Image Switching Logic */
+   /* By default, show the "Top" logo and hide the "Scrolled" logo */
+   .logo-scrolled {
+       display: none;
+   }
 
-/* When the class .scrolled is added: Hide default logo, Show scrolled logo */
-.navbar.scrolled .logo-default {
-    display: none;
-}
-.navbar.scrolled .logo-scrolled {
-    display: block;
-}
+   .logo-default {
+       display: block;
+   }
 
-/* Hover States (Optional Polish) */
-.navbar .nav-link:hover {
-    color: #e0e0e0 !important; /* Lighter white on hover at top */
-}
-.navbar.scrolled .nav-link:hover {
-    color: var(--secondary-color) !important; /* Secondary color on hover when scrolled */
-}
+   /* When the class .scrolled is added: Hide default logo, Show scrolled logo */
+   .navbar.scrolled .logo-default {
+       display: none;
+   }
+
+   .navbar.scrolled .logo-scrolled {
+       display: block;
+   }
+
+   /* Hover States (Optional Polish) */
+   .navbar .nav-link:hover {
+       color: #e0e0e0 !important;
+       /* Lighter white on hover at top */
+   }
+
+   .navbar.scrolled .nav-link:hover {
+       color: var(--secondary-color) !important;
+       /* Secondary color on hover when scrolled */
+   }
 
    /* .navbar-brand img {
             height: 50px;
@@ -245,16 +250,16 @@
    /* --- Products Section Styling --- */
 
    .nav-pills .nav-link.active {
-    font-size: 16px;
+       font-size: 16px;
 
-    color: #fff !important;
-    background-color: #055e96 !important;
+       color: #fff !important;
+       background-color: #055e96 !important;
    }
 
    .nav-pills .nav-link {
-    font-size: 16px;
+       font-size: 16px;
 
-    background-color: #ddd !important;
+       background-color: #ddd !important;
    }
 
    /* Spacing between stacked products */
@@ -265,7 +270,7 @@
    }
 
    .product-section h1 {
-    font-size: 50px;
+       font-size: 50px;
    }
 
    .product-section:last-child {
@@ -418,7 +423,7 @@
        color: white;
    }
 
-    /* --- YouTube Section 2 --- */
+   /* --- YouTube Section 2 --- */
    #youtube-section-2 {
        background: url('../images/VideoBG02.jpg') no-repeat center center/cover;
        position: relative;
@@ -434,7 +439,7 @@
        background: rgba(10, 37, 64, 0.342);
    }
 
- 
+
 
    /* --- Clients & Gallery --- */
    .client-logo {
@@ -474,7 +479,7 @@
    }
 
    .use-case-card h5 {
-    color: #fff;
+       color: #fff;
    }
 
    .use-case-card img {
@@ -505,9 +510,9 @@
        margin-bottom: 15px;
    }
 
-    a {
-    text-decoration: none;
-    color: #333;
+   a {
+       text-decoration: none;
+       color: #333;
    }
 
    .form-control {
@@ -1222,162 +1227,201 @@
    }
 
 
-/* --- How It Works Section --- */
-.how-it-works-section {
-    background-color: #f8f9fa;
-    border-radius: 15px;
-    padding: 40px 20px;
-    margin-top: 40px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    text-align: center;
-}
+   /* --- How It Works Section --- */
+   .how-it-works-section {
+       background-color: #f8f9fa;
+       border-radius: 15px;
+       padding: 40px 20px;
+       margin-top: 40px;
+       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+       text-align: center;
+   }
 
-.works-image-container {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    cursor: pointer;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s;
-}
+   .works-image-container {
+       max-width: 800px;
+       margin: 0 auto;
+       position: relative;
+       cursor: pointer;
+       border-radius: 12px;
+       overflow: hidden;
+       transition: transform 0.3s;
+   }
 
-.works-image-container:hover {
-    transform: scale(1.02);
-}
+   .works-image-container:hover {
+       transform: scale(1.02);
+   }
 
-.works-image-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+   .works-image-container img {
+       width: 100%;
+       height: auto;
+       display: block;
+   }
 
-/* Icon Overlay */
-.image-overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
+   /* Icon Overlay */
+   .image-overlay {
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       background: rgba(0, 0, 0, 0.3);
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       opacity: 0;
+       transition: opacity 0.3s;
+   }
 
-.works-image-container:hover .image-overlay {
-    opacity: 1;
-}
+   .works-image-container:hover .image-overlay {
+       opacity: 1;
+   }
 
-.image-overlay i {
-    color: white;
-    font-size: 3rem;
-}
+   .image-overlay i {
+       color: white;
+       font-size: 3rem;
+   }
 
-/* Bilingual Image Toggle for Thumbnail */
-html[dir="rtl"] .img-en { display: none; }
-html[dir="ltr"] .img-ar { display: none; }
-html[dir="ltr"] .img-en { display: block; }
-html[dir="rtl"] .img-ar { display: block; }
+   /* Bilingual Image Toggle for Thumbnail */
+   html[dir="rtl"] .img-en {
+       display: none;
+   }
+
+   html[dir="ltr"] .img-ar {
+       display: none;
+   }
+
+   html[dir="ltr"] .img-en {
+       display: block;
+   }
+
+   html[dir="rtl"] .img-ar {
+       display: block;
+   }
 
 
 
-/* --- Navbar Scroll Effect --- */
+   /* --- Navbar Scroll Effect --- */
 
-/* 1. Default State (Top of Page) */
-.navbar {
-    background-color: transparent !important; /* Transparent at top */
-    padding: 20px 0; /* Taller padding at top */
-    transition: all 0.4s ease; /* Smooth animation for changes */
-    box-shadow: none;
-}
+   /* 1. Default State (Top of Page) */
+   .navbar {
+       background-color: transparent !important;
+       /* Transparent at top */
+       padding: 20px 0;
+       /* Taller padding at top */
+       transition: all 0.4s ease;
+       /* Smooth animation for changes */
+       box-shadow: none;
+   }
 
-/* 2. Scrolled State (Applied via JS) */
-.navbar.scrolled {
-    background-color: #ffffff !important; /* White background */
-    padding: 10px 0; /* Compact height when scrolling */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Drop shadow */
-}
+   /* 2. Scrolled State (Applied via JS) */
+   .navbar.scrolled {
+       background-color: #ffffff !important;
+       /* White background */
+       padding: 10px 0;
+       /* Compact height when scrolling */
+       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+       /* Drop shadow */
+   }
 
-/* 3. Text Color Adjustments */
-/* Change link color when scrolled so it's readable on white background */
-.navbar.scrolled .nav-link {
-    color: var(--primary-color) !important; 
-}
+   /* 3. Text Color Adjustments */
+   /* Change link color when scrolled so it's readable on white background */
+   .navbar.scrolled .nav-link {
+       color: var(--primary-color) !important;
+   }
 
-.navbar.scrolled .lang-btn {
-    color: var(--primary-color) !important;
-    border-color: var(--primary-color);
-}
+   .navbar.scrolled .lang-btn {
+       color: var(--primary-color) !important;
+       border-color: var(--primary-color);
+   }
 
-/* Change logo size slightly when scrolling (Optional) */
-.navbar.scrolled .navbar-brand img {
-    height: 40px; /* Slightly smaller logo when scrolling */
-    transition: height 0.4s ease;
-}
+   /* Change logo size slightly when scrolling (Optional) */
+   .navbar.scrolled .navbar-brand img {
+       height: 40px;
+       /* Slightly smaller logo when scrolling */
+       transition: height 0.4s ease;
+   }
 
-.navbar-brand img {
-    transition: height 0.4s ease;
-}
+   .navbar-brand img {
+       transition: height 0.4s ease;
+   }
 
-/* --- Floating Buttons --- */
+   /* --- Floating Buttons --- */
 
-/* Common styles for both buttons */
-.floating-btn {
-    position: fixed;
-    bottom: 30px;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
+   /* Common styles for both buttons */
+   .floating-btn {
+       position: fixed;
+       bottom: 30px;
+       width: 55px;
+       height: 55px;
+       border-radius: 50%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       font-size: 24px;
+       color: white;
+       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+       z-index: 1000;
+       text-decoration: none;
+       transition: all 0.3s ease;
+   }
 
-/* Positioning: Right for LTR (English), Left for RTL (Arabic) */
-html[dir="ltr"] .floating-btn { right: 30px; }
-html[dir="rtl"] .floating-btn { left: 30px; }
+   /* Positioning: Right for LTR (English), Left for RTL (Arabic) */
+   html[dir="ltr"] .floating-btn {
+       right: 30px;
+   }
 
-/* --- WhatsApp Button Specifics --- */
-.btn-whatsapp {
-    background-color: #25D366; /* WhatsApp Green */
-    animation: pulse-animation 2s infinite;
-    z-index: 1001; /* Ensures it sits above Back to Top */
-}
+   html[dir="rtl"] .floating-btn {
+       left: 30px;
+   }
 
-.btn-whatsapp:hover {
-    background-color: #20b857;
-    transform: scale(1.1);
-}
+   /* --- WhatsApp Button Specifics --- */
+   .btn-whatsapp {
+       background-color: #25D366;
+       /* WhatsApp Green */
+       animation: pulse-animation 2s infinite;
+       z-index: 1001;
+       /* Ensures it sits above Back to Top */
+   }
 
-/* Pulse Animation for WhatsApp */
-@keyframes pulse-animation {
-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-}
+   .btn-whatsapp:hover {
+       background-color: #20b857;
+       transform: scale(1.1);
+   }
 
-/* --- Back to Top Button Specifics --- */
-.btn-back-to-top {
-    background-color: var(--primary-color); /* Navy Blue */
-    bottom: 95px; /* Positioned above WhatsApp */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-}
+   /* Pulse Animation for WhatsApp */
+   @keyframes pulse-animation {
+       0% {
+           box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+       }
 
-/* Visible state (toggled by JS) */
-.btn-back-to-top.show-btn {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
+       70% {
+           box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+       }
 
-.btn-back-to-top:hover {
-    background-color: var(--secondary-color); /* Light Blue on Hover */
-}
+       100% {
+           box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+       }
+   }
+
+   /* --- Back to Top Button Specifics --- */
+   .btn-back-to-top {
+       background-color: var(--primary-color);
+       /* Navy Blue */
+       bottom: 95px;
+       /* Positioned above WhatsApp */
+       opacity: 0;
+       visibility: hidden;
+       transform: translateY(20px);
+   }
+
+   /* Visible state (toggled by JS) */
+   .btn-back-to-top.show-btn {
+       opacity: 1;
+       visibility: visible;
+       transform: translateY(0);
+   }
+
+   .btn-back-to-top:hover {
+       background-color: var(--secondary-color);
+       /* Light Blue on Hover */
+   }
