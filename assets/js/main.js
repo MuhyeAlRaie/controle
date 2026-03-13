@@ -9,7 +9,7 @@ const translations = {
         nav_gallery: "Gallery",
         nav_contact: "Contact",
         hero_title: "CONTROLE & EFFICIENCY",
-        hero_subtitle: "We deliver innovative air-cooling solutions with a focus on comfort and sustainability.",
+        hero_subtitle: "We deliver innovative air-cooling solutions for outdoor areas with a focus on comfort and sustainability.",
         hero_cta: "Explore Products",
         about_prefix: "ABOUT",
         about_title1: "CONTROL",
