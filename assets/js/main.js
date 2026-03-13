@@ -93,7 +93,7 @@ const translations = {
         nav_about: "من نحن",
         nav_products: "منتجاتنا",
         nav_clients: "عملاؤنا",
-        nav_gallery: "معرض الصور",
+        nav_gallery: "المعرض",
         nav_contact: "اتصل بنا",
         hero_title: "إتقان فن التبريد الخارجي",
         hero_subtitle: "حلول تبريد بالتبخر مبتكرة مصممة لمناخ المملكة العربية السعودية. كفاءة، موثوقية، وقوة أداء.",
