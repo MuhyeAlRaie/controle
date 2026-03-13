@@ -47,13 +47,57 @@
        padding: 80px 0;
    }
 
-   /* --- Navigation --- */
-   .navbar {
-       background-color: rgba(255, 255, 255, 0.95);
-       backdrop-filter: blur(10px);
-       box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-       padding: 15px 0;
-   }
+/* --- Navbar Scroll Effect --- */
+
+/* 1. Default State (Top of Page - Transparent Background) */
+.navbar {
+    background-color: transparent !important;
+    padding: 20px 0;
+    transition: all 0.4s ease;
+    box-shadow: none;
+}
+
+/* Default Link Color: White */
+.navbar .nav-link {
+    color: #ffffff !important;
+}
+
+/* 2. Scrolled State (White Background) */
+.navbar.scrolled {
+    background-color: #ffffff !important;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Scrolled Link Color: Primary Brand Color */
+.navbar.scrolled .nav-link {
+    color: var(--primary-color) !important;
+}
+
+/* 3. Logo/Image Switching Logic */
+/* By default, show the "Top" logo and hide the "Scrolled" logo */
+.logo-scrolled {
+    display: none;
+}
+.logo-default {
+    display: block;
+}
+
+/* When the class .scrolled is added: Hide default logo, Show scrolled logo */
+.navbar.scrolled .logo-default {
+    display: none;
+}
+.navbar.scrolled .logo-scrolled {
+    display: block;
+}
+
+/* Hover States (Optional Polish) */
+.navbar .nav-link:hover {
+    color: #e0e0e0 !important; /* Lighter white on hover at top */
+}
+.navbar.scrolled .nav-link:hover {
+    color: var(--secondary-color) !important; /* Secondary color on hover when scrolled */
+}
 
    /* .navbar-brand img {
             height: 50px;
@@ -374,6 +418,24 @@
        color: white;
    }
 
+    /* --- YouTube Section 2 --- */
+   #youtube-section-2 {
+       background: url('../images/VideoBG02.jpg') no-repeat center center/cover;
+       position: relative;
+       background-attachment: fixed;
+       color: white;
+       text-align: center;
+   }
+
+   #youtube-section-2::before {
+       content: '';
+       position: absolute;
+       inset: 0;
+       background: rgba(10, 37, 64, 0.342);
+   }
+
+ 
+
    /* --- Clients & Gallery --- */
    .client-logo {
        filter: grayscale(0%);
@@ -443,6 +505,11 @@
        margin-bottom: 15px;
    }
 
+    a {
+    text-decoration: none;
+    color: #333;
+   }
+
    .form-control {
        padding: 12px;
        border-radius: 8px;
@@ -462,13 +529,13 @@
    }
 
    footer a {
-       color: #ccc;
+       color: #ffffff;
        text-decoration: none;
        transition: color 0.3s;
    }
 
    footer a:hover {
-       color: var(--secondary-color);
+       color: #fff;
    }
 
    .social-icons a {
@@ -698,14 +765,14 @@
 
    .temaparer .impact-list li::before {
        content: "•";
-       color: var(--warm);
+       color: #f48c06;
        font-weight: 700;
        font-size: 1.2rem;
        margin-right: .3rem
    }
 
    .temaparer .cool-environment .impact-list li::before {
-       color: var(--cool)
+       color: #055e96
    }
 
    .temaparer .divider {
@@ -1214,3 +1281,40 @@ html[dir="rtl"] .img-ar { display: block; }
 
 
 
+/* --- Navbar Scroll Effect --- */
+
+/* 1. Default State (Top of Page) */
+.navbar {
+    background-color: transparent !important; /* Transparent at top */
+    padding: 20px 0; /* Taller padding at top */
+    transition: all 0.4s ease; /* Smooth animation for changes */
+    box-shadow: none;
+}
+
+/* 2. Scrolled State (Applied via JS) */
+.navbar.scrolled {
+    background-color: #ffffff !important; /* White background */
+    padding: 10px 0; /* Compact height when scrolling */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Drop shadow */
+}
+
+/* 3. Text Color Adjustments */
+/* Change link color when scrolled so it's readable on white background */
+.navbar.scrolled .nav-link {
+    color: var(--primary-color) !important; 
+}
+
+.navbar.scrolled .lang-btn {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color);
+}
+
+/* Change logo size slightly when scrolling (Optional) */
+.navbar.scrolled .navbar-brand img {
+    height: 40px; /* Slightly smaller logo when scrolling */
+    transition: height 0.4s ease;
+}
+
+.navbar-brand img {
+    transition: height 0.4s ease;
+}

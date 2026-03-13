@@ -8,8 +8,8 @@ const translations = {
         nav_clients: "Clients",
         nav_gallery: "Gallery",
         nav_contact: "Contact",
-        hero_title: "Mastering the Art of Outdoor Cooling",
-        hero_subtitle: "Innovative evaporative cooling solutions designed for Saudi Arabia's climate. Efficient, reliable, and powerful.",
+        hero_title: "CONTROLE & EFFICIENCY",
+        hero_subtitle: "We deliver innovative air-cooling solutions with a focus on comfort and sustainability.",
         hero_cta: "Explore Products",
         about_prefix: "ABOUT",
         about_title1: "CONTROL",
@@ -35,6 +35,7 @@ const translations = {
         product2_ducted_title: "Delta Ducted 5000",
         product3_ducted_title: "Delta Ducted 10000",
         watch_video: "Watch Our Technology in Action",
+        watch2_video: "Expoler Features of Delta Breeze",
         watch_sub: "See how Delta Breeze transforms industrial environments.",
         trusted_by: "We are proud of the trust our customers place in us and of our commitment to high-quality service.",
         gallery_title: "Gallery",
@@ -53,7 +54,7 @@ const translations = {
         form_email: "Email",
         form_message: "Message",
         form_submit: "Send Message",
-        footer_desc: "Leading provider of evaporative cooling solutions in Saudi Arabia. Innovation meets efficiency.",
+        footer_desc: "We deliver innovative air-cooling solutions with a focus on comfort and sustainability.",
         quick_links: "Quick Links",
         contact_info: "Contact Info",
         acc_features_title: "Features",
@@ -95,8 +96,8 @@ const translations = {
         nav_clients: "عملاؤنا",
         nav_gallery: "المعرض",
         nav_contact: "اتصل بنا",
-        hero_title: "إتقان فن التبريد الخارجي",
-        hero_subtitle: "حلول تبريد بالتبخر مبتكرة مصممة لمناخ المملكة العربية السعودية. كفاءة، موثوقية، وقوة أداء.",
+        hero_title: "تحكم و ترشيد",
+        hero_subtitle: "نقدم حلولاً مبتكرة لتبريد الهواء مع التركيز على الراحة والاستدامة.",
         hero_cta: "تصفح المنتجات",
         about_prefix: "عن",
         about_title1: "تحكم",
@@ -122,6 +123,7 @@ const translations = {
         product2_ducted_title: "دلتا المركزي 5000",
         product3_ducted_title: "دلتا المركزي 10000",
         watch_video: "شاهد تقنيتنا أثناء العمل",
+        watch2_video: "استكشف مميزات دلتا بريز",
         trusted_by: "نفتخر بثقة عملاؤنا ونعتز بالتزامنا بالخدمة عالية الجودة",
         gallery_title: "المعرض",
         places_title: "تبريد مصمم لكل مكان",
@@ -138,7 +140,7 @@ const translations = {
         form_email: "البريد الإلكتروني",
         form_message: "الرسالة",
         form_submit: "إرسال الرسالة",
-        footer_desc: "المزود الرائد لحلول التبريد بالتبخر في المملكة العربية السعودية. الابتكار يلتقي بالكفاءة.",
+        footer_desc: "نقدم حلولاً مبتكرة لتبريد الهواء مع التركيز على الراحة والاستدامة.",
         quick_links: "روابط سريعة",
         contact_info: "معلومات الاتصال",
         acc_features_title: "المميزات",
@@ -184,6 +186,17 @@ document.addEventListener('DOMContentLoaded', () => {
     disable: function() {
         var maxWidth = 768;
         return window.innerWidth < maxWidth;
+    }
+});
+
+// Navbar Scroll Effect
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
     }
 });
 
@@ -263,6 +276,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+ // ==========================================
+        // LOGIC FOR THE NEW VIDEO MODAL (Modal 2)
+        // ==========================================
+        const videoModal2 = document.getElementById('videoModal2');
+        const iframe2 = document.getElementById('youtubeFrame2');
+        // This selector looks for the specific play button in the new section
+        const videoBtn2 = document.querySelector('.play-btn-2');
+        // REPLACE THIS WITH YOUR ACTUAL YOUTUBE VIDEO ID
+        const videoID2 = "FwCEDGL4B2w"; 
+
+        if (videoModal2 && videoBtn2) {
+            videoModal2.addEventListener('show.bs.modal', () => {
+                iframe2.src = `https://www.youtube.com/embed/${videoID2}?autoplay=1`;
+            });
+
+            videoModal2.addEventListener('hide.bs.modal', () => {
+                iframe2.src = "";
+            });
+        }
 // Function to open Image Modal with bilingual support
 function openHowItWorksModal() {
     const modal = new bootstrap.Modal(document.getElementById('imageModal'));
