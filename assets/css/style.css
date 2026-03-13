@@ -468,74 +468,68 @@
        transform: scale(1.1);
    }
 
-   /* --- Custom Carousel Arrows (Centered) --- */
+   /* --- Custom Carousel Arrows (RTL Support) --- */
 
-   .carousel-control-prev,
-   .carousel-control-next {
-       /* Dimensions */
-       width: 50px;
-       height: 50px;
+.carousel-control-prev, 
+.carousel-control-next {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 15;
+    margin: 0 15px;
+    background-color: var(--primary-color) !important;
+    border-radius: 50%;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
 
-       /* --- VERTICAL CENTERING --- */
-       position: absolute;
-       top: 50%;
-       /* Move down 50% of the carousel container */
-       transform: translateY(-50%);
-       /* Move up 50% of the button height */
-       z-index: 15;
-       /* Ensure it sits above images/overlays */
+.carousel-control-prev:hover, 
+.carousel-control-next:hover {
+    background-color: var(--secondary-color) !important;
+    transform: translateY(-50%) scale(1.1);
+}
 
-       /* --- HORIZONTAL SPACING (Pull away from edges) --- */
-       /* Using margin pushes the button inwards from the anchor point */
-       margin: 0 15px;
+.carousel-control-prev-icon, 
+.carousel-control-next-icon {
+    background-image: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
 
-       /* Styling */
-       background-color: var(--primary-color) !important;
-       /* Navy Blue Background */
-       border-radius: 50%;
-       /* Circular Shape */
-       opacity: 1;
-       /* Always visible */
-       transition: all 0.3s ease;
-   }
+/* --- LTR (English) --- */
+/* Prev Button (Left) needs Left Arrow */
+.carousel-control-prev-icon::after {
+    content: '\f053'; 
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: white;
+    font-size: 20px;
+}
 
-   /* Hover Effect */
-   .carousel-control-prev:hover,
-   .carousel-control-next:hover {
-       background-color: var(--secondary-color) !important;
-       /* Accent Color on Hover */
-       transform: translateY(-50%) scale(1.1);
-       /* Scale up while keeping centered */
-   }
+/* Next Button (Right) needs Right Arrow */
+.carousel-control-next-icon::after {
+    content: '\f054'; 
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: white;
+    font-size: 20px;
+}
 
-   /* Icon Styling (White Arrows) */
-   .carousel-control-prev-icon,
-   .carousel-control-next-icon {
-       background-image: none !important;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       width: 100%;
-       height: 100%;
-   }
+/* --- RTL (Arabic) --- */
+/* In RTL, the Prev button moves to the Right, so it needs a Right Arrow */
+html[dir="rtl"] .carousel-control-prev-icon::after {
+    content: '\f054'; /* Right Arrow */
+}
 
-   /* Left Arrow */
-   .carousel-control-prev-icon::after {
-       content: '\f053';
-       font-family: 'Font Awesome 6 Free';
-       font-weight: 900;
-       color: white;
-       font-size: 20px;
-   }
-
-   /* Right Arrow */
-   .carousel-control-next-icon::after {
-       content: '\f054';
-       font-family: 'Font Awesome 6 Free';
-       font-weight: 900;
-       color: white;
-       font-size: 20px;
-   }
+/* In RTL, the Next button moves to the Left, so it needs a Left Arrow */
+html[dir="rtl"] .carousel-control-next-icon::after {
+    content: '\f053'; /* Left Arrow */
+}
 
    /* --- Dynamic Gallery Carousel (Square Grid) --- */
 
