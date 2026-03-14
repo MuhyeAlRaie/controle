@@ -366,7 +366,7 @@ const galleryImages = [
     "assets/images/gallery/G18.jpeg",
     "assets/images/gallery/G19.jpeg",
     "assets/images/gallery/G20.jpeg",
-    "assets/images/gallery/G20.jpeg"
+    "assets/images/gallery/ComfortLogo.JPG"
 ];
 
 const carouselInner = document.getElementById('gallery-carousel-inner');
