@@ -1,0 +1,31 @@
+name: Deploy to Bluehost
+
+# Trigger: Runs every time you commit to the 'main' branch
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Get your files from the GitHub repository
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    # 2. Send files to Bluehost via FTP
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        
+        # CRITICAL: This is the folder where your website lives on Bluehost
+        server-dir: /public_html/controle
+        
+        # Don't upload the internal github files to your server
+        exclude: |
+          .git*
+          .github*
