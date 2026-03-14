@@ -21,10 +21,8 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        
-       
         server-dir: /public_html/controle/
-        
+        state: present 
         
         exclude: |
           .git*
