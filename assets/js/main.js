@@ -1,14 +1,14 @@
 // --- Translations Object ---
 const translations = {
     en: {
-        company_name: "Controle & Efficiency",
+        company_name: "Control & Efficiency",
         nav_home: "Home",
         nav_about: "About Us",
         nav_products: "Products",
         nav_clients: "Clients",
         nav_gallery: "Gallery",
         nav_contact: "Contact",
-        hero_title: "CONTROLE & EFFICIENCY",
+        hero_title: "CONTROL & EFFICIENCY",
         hero_subtitle: "We deliver innovative air-cooling solutions for outdoor areas with a focus on comfort and sustainability.",
         hero_cta: "Explore Products",
         about_prefix: "ABOUT",
@@ -97,7 +97,7 @@ const translations = {
         nav_gallery: "المعرض",
         nav_contact: "اتصل بنا",
         hero_title: "تحكم و ترشيد",
-        hero_subtitle: "نقدم حلولاً للتكييف مبتكرة للمناطق الخارجية مع التركيز على الراحة والاستدامة.",
+        hero_subtitle: "نقدم حلول مبتكرة لتكييف المناطق الخارجية مع التركيز على الراحة والاستدامة.",
         hero_cta: "تصفح المنتجات",
         about_prefix: "عن",
         about_title1: "تحكم",
