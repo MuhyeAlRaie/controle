@@ -8,6 +8,8 @@ const translations = {
         nav_clients: "Clients",
         nav_gallery: "Gallery",
         nav_contact: "Contact",
+        nav_privacy: "Privacy",
+        nav_terms: "Terms",
         hero_title: "CONTROL & EFFICIENCY",
         hero_subtitle: "We deliver innovative air-cooling solutions for outdoor areas with a focus on comfort and sustainability.",
         hero_cta: "Explore Products",
@@ -87,6 +89,7 @@ const translations = {
         how_it_works_desc: "4 Steps Cooling Process using water only :",
         btn_specs: "Download Specifications",
         btn_brochure: "Download Brochure",
+
     },
     ar: {
         company_name: "التحكم والكفاءة",
@@ -96,6 +99,8 @@ const translations = {
         nav_clients: "عملاؤنا",
         nav_gallery: "المعرض",
         nav_contact: "اتصل بنا",
+        nav_privacy: "سياسة الخصوصية",
+        nav_terms: "الشروط والأحكام",
         hero_title: "تحكم و ترشيد",
         hero_subtitle: "نقدم حلول مبتكرة لتكييف المناطق الخارجية مع التركيز على الراحة والاستدامة.",
         hero_cta: "تصفح المنتجات",
