@@ -47,7 +47,7 @@ const translations = {
         contact_desc: "Have a question or need a custom cooling solution? Reach out to us.",
         chat_us: "Chat with us",
         visit_us: "Visit us",
-        address: "Riyadh, Saudi Arabia",
+        address: "Northern Ring Rd, At Taawun, Riyadh 12477, Saudi Arabia",
         call_us: "Call us",
         form_name: "Name",
         form_phone: "Phone",
