@@ -189,6 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    Tally.loadEmbeds();
     // Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
 

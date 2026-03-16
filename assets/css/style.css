@@ -611,17 +611,7 @@ html[dir="rtl"] .carousel-control-next-icon::after {
        color: #333;
    }
 
-   .form-control {
-       padding: 12px;
-       border-radius: 8px;
-       border: 1px solid #ddd;
-   }
-
-   .form-control:focus {
-       border-color: var(--secondary-color);
-       box-shadow: 0 0 0 0.2rem rgba(0, 168, 204, 0.25);
-   }
-
+   
    /* --- Footer --- */
    footer {
        background-color: var(--primary-color);
