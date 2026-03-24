@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /wp-
+Disallow: /wcf-
 
 Sitemap: https://controle.sa/sitemap.xml
