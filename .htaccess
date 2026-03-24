@@ -15,18 +15,21 @@ RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 RewriteCond %{QUERY_STRING} (^|&)(p=|page_id=) [NC]
 RewriteRule ^ - [R=404,L]
 
-# السماح بالملفات
+# السماح بالملفات والمجلدات الموجودة
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# الصفحة الجديدة
-RewriteRule ^home/?$ home.html [L]
+# تحويل /home → home.html
+# تحويل /privacy → privacy.html
+# تحويل /terms → terms.html
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
 
 # الصفحة الرئيسية
 RewriteRule ^$ index.html [L]
 
-# أي شيء آخر
+# أي شيء غير موجود → 404
 RewriteRule . - [R=404,L]
 
 </IfModule>
