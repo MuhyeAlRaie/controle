@@ -1521,3 +1521,8 @@ html[dir="rtl"] .carousel-control-next-icon::after {
 .seo-keywords-block:hover p.tiny {
     opacity: 1;
 }
+
+/* Hides content from view but keeps it in source code for Google */
+.seo-hidden {
+    display: none !important;
+}
