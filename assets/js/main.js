@@ -372,6 +372,10 @@ const galleryImages = [
     "assets/images/gallery/G18.jpeg",
     "assets/images/gallery/G19.jpeg",
     "assets/images/gallery/G20.jpeg",
+    "assets/images/gallery/G22.jpeg",
+    "assets/images/gallery/G23.jpeg",
+    "assets/images/gallery/G24.jpeg",
+    "assets/images/gallery/G25.jpeg",
 ];
 
 const carouselInner = document.getElementById('gallery-carousel-inner');
